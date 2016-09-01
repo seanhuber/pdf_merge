@@ -12,3 +12,7 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+# gem 'rsync_wrapper', path: '../rsync_wrapper'
+# gem 'doc_2_pdf', path: '../doc_2_pdf'
+# gem 'pdf_thumbnailer', path: '../pdf_thumbnailer'
