@@ -15,5 +15,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
+  s.add_dependency 'rsync_wrapper', '~> 1.0.0'
+  s.add_dependency 'doc_2_pdf', '~> 1.1.0'
+  s.add_dependency 'pdf_thumbnailer', '~> 1.1.0'
+
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'awesome_print'
 end

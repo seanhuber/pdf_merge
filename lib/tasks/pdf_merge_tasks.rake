@@ -1,4 +1,9 @@
-# desc "Explaining what the task does"
-# task :pdf_merge do
-#   # Task goes here
-# end
+namespace :pdf_merge do
+  desc 'syncs remote_store to local_store'
+  task sync: :environment do
+    ap ({
+      local_store: PdfMerge.local_store,
+      remote_store: PdfMerge.remote_store
+    })
+  end
+end
