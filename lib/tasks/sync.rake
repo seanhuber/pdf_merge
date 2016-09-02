@@ -5,6 +5,7 @@ namespace :pdf_merge do
     # simple_structure = '/Users/seanhuber/Documents/pdfb2/simple_structure'
     # FileUtils.rm_rf(simple_structure) if File.directory?(simple_structure)
     # FileUtils.cp_r '/Users/seanhuber/Documents/pdfb2/simple_structure_og', simple_structure
+    # PdfMerge::Folder.root&.destroy
     # ---------------------------------------
 
     rsync = Rsync.new(
@@ -19,16 +20,7 @@ namespace :pdf_merge do
     PdfThumbs.configure img_dir: PdfMerge.images_dir, thumb_sizes: [1000, 500]
 
     rsync.sync! do |file_path, new_file|
-      if DocPdf.doc? file_path
-        pdf_root_dir = PdfMerge.doc_pdf_dir
-        relative_pdf_path = DocPdf.convert_single!(File.join(PdfMerge.local_store, file_path))
-      else
-        pdf_root_dir = PdfMerge.local_store
-        relative_pdf_path = file_path
-      end
-      img_dir = PdfThumbs.thumbnail_single! pdf_root_dir, relative_pdf_path
-
-      ap file_path
+      PdfMerge::Fyle.imagify file_path
     end
   end
 end

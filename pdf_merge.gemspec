@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rsync_wrapper', '~> 1.0.0'
   s.add_dependency 'doc_2_pdf', '~> 1.1.0'
-  s.add_dependency 'pdf_thumbnailer', '~> 1.1.0'
+  s.add_dependency 'pdf_thumbnailer', '~> 1.2.0'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'awesome_print'
