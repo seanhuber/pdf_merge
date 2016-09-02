@@ -1,0 +1,8 @@
+li.folder[data-path='.']:before,
+li.folder[data-path='.'] > .basename {
+  display: none;
+}
+
+li.folder[data-path='.'] > ul {
+  padding-left: 0px;
+}

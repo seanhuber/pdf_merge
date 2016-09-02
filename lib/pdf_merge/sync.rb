@@ -12,7 +12,8 @@ module PdfMerge
         src_dir: PdfMerge.remote_store,
         dest_dir: PdfMerge.local_store,
         include_extensions: [:doc, :docx, :pdf],
-        log_dir: Rails.root.join('log')
+        log_dir: Rails.root.join('log'),
+        subdirs_only: true
       )
 
       DocPdf.configure doc_dir: PdfMerge.local_store, pdf_dir: PdfMerge.doc_pdf_dir

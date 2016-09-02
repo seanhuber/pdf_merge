@@ -1,0 +1,11 @@
+<div id='demo_tree'></div>
+
+<script>
+  $('#demo_tree').folderTree({
+    root: '.',
+    contents_url: '<%= demo_folder_tree_path %>',
+    file_click: function(event, data) {
+      console.log('You clicked the file with path: '+data.path);
+    }
+  });
+</script>
