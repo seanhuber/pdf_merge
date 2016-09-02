@@ -4,7 +4,7 @@ module PdfMerge
 
     belongs_to :folder
 
-    after_initialize :set_folder
+    before_validation :set_folder
 
     validates :path, presence: true
 

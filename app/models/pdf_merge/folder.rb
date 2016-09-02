@@ -7,7 +7,7 @@ module PdfMerge
     has_many :folders, foreign_key: :parent_folder_id, dependent: :destroy
     has_many :fyles, dependent: :destroy
 
-    after_initialize :set_parent_folder
+    before_validation :set_parent_folder
 
     validates :path, presence: true
 
