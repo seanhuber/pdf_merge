@@ -14,6 +14,10 @@ module PdfMerge
       ImagifyJob.perform_later file.id
     end
 
+    def name
+      File.basename path
+    end
+
     def remote_relative_path
       File.join File.basename(PdfMerge.remote_store), path
     end

@@ -1,4 +1,5 @@
 PdfMerge::Engine.routes.draw do
   root 'folder#index'
-  get 'demo/folder-tree' => 'folder#folder_tree_demo'
+  get 'folder/show' => 'folder#show'
+  get 'fyle/show' => 'fyle#show'
 end

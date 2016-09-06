@@ -1,11 +1,29 @@
-<div id='demo_tree'></div>
+<div class='left-pane'>
+  <div id='f_tree'></div>
+  <div class='clearfix'></div>
+  <div class='ui-resizable-e ui-resizable-handle'></div>
+</div>
+
+<div class='right-pane'></div>
+
+<div id='f_tree'></div>
 
 <script>
-  $('#demo_tree').folderTree({
+  $('html').addClass('pdf-merge-page');
+
+  $('.left-pane').resizable({
+    handles: { e: '.left-pane > .ui-resizable-handle' },
+    create: function( event, ui ) {
+      $('.ui-resizable-e').css('cursor','ew-resize');
+    }
+  });
+
+  $('#f_tree').folderTree({
     root: '.',
-    contents_url: '<%= demo_folder_tree_path %>',
+    contents_url: '<%= folder_show_path %>',
     file_click: function(event, data) {
       console.log('You clicked the file with path: '+data.path);
+      $.get('<%= fyle_show_path %>', $.param({path: data.path}));
     }
   });
 </script>

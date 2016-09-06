@@ -23,5 +23,8 @@ module PdfMerge
 
   def self.setup
     yield self
+
+    Rails.application.config.middleware.use Rack::Static, urls: ["/images/#{File.basename(remote_store)}"], root: local_store
+    # http://localhost:3000/images/files/olympus.pdf/1000_2.png
   end
 end

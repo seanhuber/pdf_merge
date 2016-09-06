@@ -13,3 +13,36 @@
  *= require_tree .
  *= require_self
  */
+
+ html.pdf-merge-page,
+ html.pdf-merge-page > body,
+ .left-pane,
+ .right-pane {
+   height: 100%;
+ }
+
+ html.pdf-merge-page > body {
+   width: 100%;
+   padding: 0;
+   margin: 0;
+ }
+
+ .left-pane {
+   width: 33%;
+   float: left;
+ }
+
+ .left-pane > .ui-resizable-handle {
+   background-color: lightgray;
+   right: 0;
+   opacity: 0.5;
+ }
+
+ .left-pane > .ui-resizable-handle:hover {
+   opacity: 1.0;
+ }
+
+ .left-pane,
+ .right-pane {
+   overflow-y: auto;
+ }
