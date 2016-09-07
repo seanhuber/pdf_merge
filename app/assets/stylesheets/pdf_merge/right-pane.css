@@ -3,8 +3,68 @@
   background-color: #f3f3f3;
 }
 
-.right-pane img {
+.right-pane img.first-page {
   margin-top: 20px;
   border: 1px solid #e6e6e6;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.15);
+}
+
+/* --------------------- pageSelector widget --------------------- */
+
+.right-pane .pg-selector-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: rgba(0,0,0,0.8);
+  color: white;
+  display: none;
+}
+
+.right-pane .pg-selector-backdrop .close-pg-selector {
+  float: right;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  font-size: 20px;
+  opacity: 0.8;
+}
+
+.right-pane .pg-selector-backdrop .close-pg-selector:hover {
+  cursor: pointer;
+  opacity: 1.0;
+}
+
+.right-pane .pg-selector-backdrop .thumbs,
+.right-pane .pg-selector-backdrop .page-view {
+  overflow-y: auto;
+}
+
+.right-pane .pg-selector-backdrop .thumbs {
+  width: 50%;
+  height: 100%;
+  float: left;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li {
+  display: inline-block;
+  float: left;
+  margin: 5px;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li img:hover {
+  cursor: pointer;
+}
+
+.right-pane .pg-selector-backdrop .thumbs > .ui-resizable-handle {
+  background-color: lightgray;
+  right: 0;
+  opacity: 0.5;
+  float: left;
+}
+
+.right-pane .pg-selector-backdrop .thumbs > .ui-resizable-handle:hover {
+  opacity: 1.0;
 }

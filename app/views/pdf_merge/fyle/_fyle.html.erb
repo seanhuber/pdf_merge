@@ -1,6 +1,18 @@
-<%= page_image fyle %>
-<h3><%= fyle.name %></h3>
-<p>
-  <%= "#{fyle.num_pages} #{'Page'.pluralize(fyle.num_pages)}" %>
-</p>
-<%= button_tag 'View/Select Page(s)', class: 'btn btn-default select-pages' %>
+<div class='fyle-overview'>
+  <%= page_image fyle, 1, class: 'first-page' %>
+  <h3><%= fyle.name %></h3>
+  <p>
+    <%= "<span class='num-pages'>#{fyle.num_pages}</span> #{'Page'.pluralize(fyle.num_pages)}".html_safe %>
+  </p>
+  <%= button_tag 'View/Select Page(s)', class: 'btn btn-default select-pages' %>
+</div>
+
+<div class='pg-selector-backdrop'>
+  <span class='glyphicon glyphicon-remove close-pg-selector'></span>
+  <div class='thumbs'></div>
+  <div class='page-view'>
+    <h3 class='filename'></h3>
+    <div class='page-img'></div>
+    <div class='page-num'>Page <span class='selected-page'>1</span> of <span class='num-pages'></span></div>
+  </div>
+</div>

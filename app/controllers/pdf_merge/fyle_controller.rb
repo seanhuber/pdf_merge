@@ -6,5 +6,9 @@ module PdfMerge
       path = File.join params.require(:path).split(File::SEPARATOR)[1..-1]
       @fyle = Fyle.find_by_path path
     end
+
+    def thumbs
+      @fyle = Fyle.find params.require(:id)
+    end
   end
 end

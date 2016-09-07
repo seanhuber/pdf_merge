@@ -1,0 +1,11 @@
+<div class='thumbs'>
+  <ul>
+    <% fyle.num_pages.times do |idx| %>
+      <li data-page-num='<%= idx+1 %>'>
+        <%= page_image fyle, idx+1, width: 100 %>
+      </li>
+    <% end %>
+  </ul>
+  <div class='clearfix'></div>
+  <div class='ui-resizable-e ui-resizable-handle'></div>
+</div>

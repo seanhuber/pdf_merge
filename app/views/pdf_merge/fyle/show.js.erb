@@ -1,1 +1,5 @@
 $('.right-pane').html('<%= j render partial: 'fyle', locals: {fyle: @fyle} %>');
+$('.right-pane .select-pages.btn').pageSelector({
+  fyle_id: '<%= @fyle.id %>',
+  thumbs_url: '<%= fyle_thumbs_path %>'
+});
