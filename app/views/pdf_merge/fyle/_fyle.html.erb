@@ -1,3 +1,6 @@
 <%= page_image fyle %>
 <h3><%= fyle.name %></h3>
-<%= ap(fyle, plain: true).html_safe %>
+<p>
+  <%= "#{fyle.num_pages} #{'Page'.pluralize(fyle.num_pages)}" %>
+</p>
+<%= button_tag 'View/Select Page(s)', class: 'btn btn-default select-pages' %>

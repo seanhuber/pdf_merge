@@ -24,6 +24,9 @@
     file_click: function(event, data) {
       console.log('You clicked the file with path: '+data.path);
       $.get('<%= fyle_show_path %>', $.param({path: data.path}));
+    },
+    folder_shown: function(event, data) {
+      $("li.folder[data-path='"+data.path+"'] > ul > li.file:first > .basename").trigger('click');
     }
   });
 </script>
