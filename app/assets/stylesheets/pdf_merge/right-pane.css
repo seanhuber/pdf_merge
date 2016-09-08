@@ -51,11 +51,46 @@
 .right-pane .pg-selector-backdrop .thumbs li {
   display: inline-block;
   float: left;
+  padding: 5px;
+  position: relative;
+  width: 110px; /* TODO: set this dynamically based on image width */
+  height: 163px; /* TODO: set this dynamically based on image height */
+  opacity: 0.5;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li.selected {
+  background-color: rgba(119,251,155,0.5);
+  opacity: 0.75;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li:hover {
+  cursor: pointer;
+  background-color: rgba(144, 199, 247, 0.75);
+  opacity: 1.0;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li.clicked {
+  opacity: 1.0;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li.selected:hover {
+  background-color: rgba(119,251,155,0.75);
+}
+
+.right-pane .pg-selector-backdrop .thumbs li img {
   margin: 5px;
 }
 
-.right-pane .pg-selector-backdrop .thumbs li img:hover {
-  cursor: pointer;
+.right-pane .pg-selector-backdrop .thumbs li img,
+.right-pane .pg-selector-backdrop .thumbs li input[type='checkbox'] {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.right-pane .pg-selector-backdrop .thumbs li input[type='checkbox'] {
+  top: 5px;
+  left: 10px;
 }
 
 .right-pane .pg-selector-backdrop .thumbs > .ui-resizable-handle {

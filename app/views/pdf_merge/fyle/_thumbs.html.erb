@@ -3,6 +3,7 @@
     <% fyle.num_pages.times do |idx| %>
       <li data-page-num='<%= idx+1 %>'>
         <%= page_image fyle, idx+1, width: 100 %>
+        <%= check_box_tag :page, idx+1 %>
       </li>
     <% end %>
   </ul>

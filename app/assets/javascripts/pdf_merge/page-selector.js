@@ -48,14 +48,23 @@
       });
 
       this.backdrop.find('.thumbs li').click(function() {
+        that.backdrop.find('.thumbs li').removeClass('clicked');
+        $(this).addClass('clicked');
+
         var page_num = $(this).data('page-num');
         var $img = that.backdrop.find('.page-view > .page-img > img');
-        
+
         var src_pieces = $img.attr('src').split('/');
         src_pieces[ src_pieces.length - 1 ] = '500_'+page_num+'.png';
         $img.attr('src', src_pieces.join('/') );
 
         that.backdrop.find('.page-view .selected-page').text(page_num);
+      });
+
+      this.backdrop.find('.thumbs li').dblclick(function() {
+        var page_num = $(this).data('page-num');
+        $(this).toggleClass('selected');
+        $(this).find("input[type='checkbox']").prop('checked', $(this).hasClass('selected'));
       });
     }
   });
