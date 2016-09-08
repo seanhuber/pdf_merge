@@ -20,11 +20,12 @@ ActiveRecord::Schema.define(version: 20160901200852) do
   end
 
   create_table "fyles", force: :cascade do |t|
-    t.string   "path",       null: false
-    t.integer  "folder_id",  null: false
+    t.string   "path",             null: false
+    t.integer  "folder_id",        null: false
     t.integer  "num_pages"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "thumb_dimensions"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
 end

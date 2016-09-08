@@ -4,6 +4,7 @@ class CreateFyles < ActiveRecord::Migration[5.0]
       t.string :path, null: false
       t.integer :folder_id, null: false
       t.integer :num_pages
+      t.text :thumb_dimensions
       t.timestamps null: false
     end
 

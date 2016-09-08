@@ -2,6 +2,8 @@ module PdfMerge
   class Fyle < ApplicationRecord
     self.table_name = 'fyles'
 
+    serialize :thumb_dimensions, JSON
+
     belongs_to :folder
 
     before_validation :set_folder
@@ -10,7 +12,7 @@ module PdfMerge
 
     def self.imagify remote_relative_path
       file = find_or_create_by! path: File.join(remote_relative_path.split(File::SEPARATOR)[1..-1])
-      file.update_column :num_pages, nil
+      file.update_columns num_pages: nil, thumb_dimensions: nil
       ImagifyJob.perform_later file.id
     end
 
