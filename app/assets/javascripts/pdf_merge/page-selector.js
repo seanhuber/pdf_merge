@@ -3,7 +3,10 @@
     options: {
       fyle_id: '',
       thumbs_url: '',
-      page_image_size: 1000
+      page_image_size: 1000,
+      setPageSelections: function(event, data){
+        console.log('selections:', data.selections);
+      }
     },
 
     _create: function() {
@@ -72,7 +75,7 @@
         var selections = that.backdrop.find('.thumbs li.selected').map(function() {
           return $(this).data('page-num');
         }).get();
-        console.log('selections: ', selections);
+        that._trigger('setPageSelections', null, {selections: selections});
       });
 
       this.backdrop.find('.thumbs li').click(function() {
