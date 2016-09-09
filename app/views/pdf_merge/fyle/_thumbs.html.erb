@@ -1,4 +1,8 @@
 <div class='thumbs'>
+  <div class='buttons'>
+    <%= button_tag 'Select All', class: 'btn-default btn select-all' %>
+    <%= button_tag 'Add Selected Page(s)', class: 'btn-primary btn add-selections disabled' %>
+  </div>
   <ul>
     <% fyle.num_pages.times do |idx| %>
       <li data-page-num='<%= idx+1 %>' style='width: <%= fyle.thumb_dimensions[(idx+1).to_s][0]+10 %>px; height: <%= fyle.thumb_dimensions[(idx+1).to_s][1]+10 %>px;'>
