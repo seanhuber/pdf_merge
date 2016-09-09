@@ -1,0 +1,4 @@
+nav.navbar-fixed-top p.bundle-details > .section-count,
+nav.navbar-fixed-top p.bundle-details > .page-count {
+  font-weight: bold;
+}
