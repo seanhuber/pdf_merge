@@ -1,8 +1,8 @@
 <div class='thumbs'>
   <ul>
     <% fyle.num_pages.times do |idx| %>
-      <li data-page-num='<%= idx+1 %>'>
-        <%= page_image fyle, idx+1, width: 100 %>
+      <li data-page-num='<%= idx+1 %>' style='width: <%= fyle.thumb_dimensions[(idx+1).to_s][0]+10 %>px; height: <%= fyle.thumb_dimensions[(idx+1).to_s][1]+10 %>px;'>
+        <%= page_image fyle, idx+1, PdfMerge.thumbnail_size %>
         <%= check_box_tag :page, idx+1 %>
       </li>
     <% end %>

@@ -18,7 +18,7 @@ module PdfMerge
 
       DocPdf.configure doc_dir: PdfMerge.local_store, pdf_dir: PdfMerge.doc_pdf_dir
 
-      PdfThumbs.configure img_dir: PdfMerge.images_dir, thumb_sizes: [1000, 500]
+      PdfThumbs.configure img_dir: PdfMerge.images_dir, thumb_sizes: [PdfMerge.page_image_size, PdfMerge.thumbnail_size]
 
       rsync.sync! do |file_path, new_file|
         Fyle.imagify file_path

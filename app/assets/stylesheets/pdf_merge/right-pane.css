@@ -7,6 +7,7 @@
   margin-top: 20px;
   border: 1px solid #e6e6e6;
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.15);
+  max-width: 500px;
 }
 
 /* --------------------- pageSelector widget --------------------- */
@@ -48,13 +49,15 @@
   float: left;
 }
 
+.right-pane .pg-selector-backdrop .thumbs ul {
+  margin-top: 15px;
+}
+
 .right-pane .pg-selector-backdrop .thumbs li {
   display: inline-block;
   float: left;
   padding: 5px;
   position: relative;
-  width: 110px; /* TODO: set this dynamically based on image width */
-  height: 163px; /* TODO: set this dynamically based on image height */
   opacity: 0.5;
 }
 
@@ -102,4 +105,8 @@
 
 .right-pane .pg-selector-backdrop .thumbs > .ui-resizable-handle:hover {
   opacity: 1.0;
+}
+
+.right-pane .pg-selector-backdrop .page-view img {
+  max-width: 500px;
 }

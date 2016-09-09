@@ -1,5 +1,5 @@
 <div class='fyle-overview'>
-  <%= page_image fyle, 1, class: 'first-page' %>
+  <%= page_image fyle, 1, PdfMerge.page_image_size, class: 'first-page' %>
   <h3><%= fyle.name %></h3>
   <p>
     <%= "<span class='num-pages'>#{fyle.num_pages}</span> #{'Page'.pluralize(fyle.num_pages)}".html_safe %>

@@ -2,7 +2,8 @@
   $.widget( 'sh.pageSelector', {
     options: {
       fyle_id: '',
-      thumbs_url: ''
+      thumbs_url: '',
+      page_image_size: 1000
     },
 
     _create: function() {
@@ -55,7 +56,7 @@
         var $img = that.backdrop.find('.page-view > .page-img > img');
 
         var src_pieces = $img.attr('src').split('/');
-        src_pieces[ src_pieces.length - 1 ] = '500_'+page_num+'.png';
+        src_pieces[ src_pieces.length - 1 ] = that.options.page_image_size+'_'+page_num+'.png';
         $img.attr('src', src_pieces.join('/') );
 
         that.backdrop.find('.page-view .selected-page').text(page_num);

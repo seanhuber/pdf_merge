@@ -7,7 +7,7 @@ module PdfMerge
       expect(File).to exist(File.join(PdfMerge.local_store, 'sample_remote_store', 'olympus.pdf'))
 
       (1..3).each do |page_num|
-        [1000, 500].each do |thumb_size|
+        [1500, 150].each do |thumb_size|
           expect(File).to exist(File.join(PdfMerge.local_store, 'images', 'sample_remote_store', 'olympus.pdf', "#{thumb_size}_#{page_num}.png"))
         end
       end

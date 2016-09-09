@@ -16,8 +16,8 @@ module PdfMerge
       num_pages = PdfThumbs.thumbnail_single! pdf_root_dir, relative_pdf_path
 
       thumb_dimensions = {}
-      Dir.glob(File.join(PdfMerge.images_dir, file_path, '500_*.png')) do |thumbnail|
-        thumb_dimensions[thumbnail.split('500_')[-1].split('.')[0]] = FastImage.size thumbnail
+      Dir.glob(File.join(PdfMerge.images_dir, file_path, "#{PdfMerge.thumbnail_size}_*.png")) do |thumbnail|
+        thumb_dimensions[thumbnail.split("#{PdfMerge.thumbnail_size}_")[-1].split('.')[0]] = FastImage.size thumbnail
       end
 
       file.update_attributes! num_pages: num_pages, thumb_dimensions: thumb_dimensions

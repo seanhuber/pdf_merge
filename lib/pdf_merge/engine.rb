@@ -3,9 +3,11 @@ module PdfMerge
     isolate_namespace PdfMerge
 
     config.to_prepare do
-      PdfMerge.local_store ||= File.expand_path Rails.root.join('..', 'pdf_merge_store')
-      PdfMerge.doc_pdf_dir ||= File.join PdfMerge.local_store, 'doc_pdfs'
-      PdfMerge.images_dir ||= File.join PdfMerge.local_store, 'images'
+      PdfMerge.local_store     ||= File.expand_path Rails.root.join('..', 'pdf_merge_store')
+      PdfMerge.doc_pdf_dir     ||= File.join PdfMerge.local_store, 'doc_pdfs'
+      PdfMerge.images_dir      ||= File.join PdfMerge.local_store, 'images'
+      PdfMerge.page_image_size ||= 1500
+      PdfMerge.thumbnail_size  ||= 150
     end
   end
 
@@ -18,8 +20,14 @@ module PdfMerge
   mattr_accessor :local_store
   @@local_store = nil
 
+  mattr_accessor :page_image_size
+  @@page_image_size = nil
+
   mattr_accessor :remote_store
   @@remote_store = nil
+
+  mattr_accessor :thumbnail_size
+  @@thumbnail_size = nil
 
   def self.setup
     yield self
