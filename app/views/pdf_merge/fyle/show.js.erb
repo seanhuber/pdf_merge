@@ -4,6 +4,6 @@ $('.right-pane .select-pages.btn').pageSelector({
   thumbs_url: '<%= fyle_thumbs_path %>',
   page_image_size: '<%= PdfMerge.page_image_size %>',
   setPageSelections: function(event, data) {
-    console.log('page selections:', data.selections);
+    $('nav.navbar > .bundle-details').sectionSelector('show', <%= @fyle.id %>, data.selections);
   }
 });

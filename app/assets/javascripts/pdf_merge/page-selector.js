@@ -75,6 +75,7 @@
         var selections = that.backdrop.find('.thumbs li.selected').map(function() {
           return $(this).data('page-num');
         }).get();
+        that.close();
         that._trigger('setPageSelections', null, {selections: selections});
       });
 

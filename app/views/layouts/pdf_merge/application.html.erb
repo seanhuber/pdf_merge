@@ -31,16 +31,8 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class='navbar navbar-default navbar-fixed-top'>
-      <form class='navbar-form navbar-left'>
-        <div class='form-group'>
-          <input type='text' class='form-control' placeholder='new_file.pdf'>
-        </div>
-      </form>
-      <p class='navbar-text bundle-details'>
-        <span class='section-count'>0</span> section(s) totaling <span class='page-count'>0</span> page(s).
-      </p>
-    </nav>
+    <%= render partial: '/layouts/pdf_merge/navbar' %>
     <%= yield %>
+    <%= render partial: '/layouts/pdf_merge/section_selector_modal' %>
   </body>
 </html>

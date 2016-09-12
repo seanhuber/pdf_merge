@@ -1,0 +1,7 @@
+#selections_modal input[type='radio'][value='-1'] {
+  bottom: 12px;
+}
+
+#selections_modal .section-template {
+  display: none;
+}

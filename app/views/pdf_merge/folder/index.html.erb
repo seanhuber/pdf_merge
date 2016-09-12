@@ -7,23 +7,5 @@
 <div class='right-pane'></div>
 
 <script>
-  $('html').addClass('pdf-merge-page');
-
-  $('.left-pane').resizable({
-    handles: { e: '.left-pane > .ui-resizable-handle' },
-    create: function( event, ui ) {
-      $('.ui-resizable-e').css('cursor','ew-resize');
-    }
-  });
-
-  $('#f_tree').folderTree({
-    root: '.',
-    contents_url: '<%= folder_show_path %>',
-    file_click: function(event, data) {
-      $.get('<%= fyle_show_path %>', $.param({path: data.path}));
-    },
-    folder_shown: function(event, data) {
-      $("li.folder[data-path='"+data.path+"'] > ul > li.file:first > .basename").trigger('click');
-    }
-  });
+  <%= render partial: 'index', formats: :js %>
 </script>
