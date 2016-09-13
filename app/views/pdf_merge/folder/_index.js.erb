@@ -20,6 +20,8 @@ $('#f_tree').folderTree({
 
 $('nav.navbar > .bundle-details').sectionSelector({
   setSectionSelection: function(event, data){
-    console.log(data);
+    $('nav.navbar > .bundle-details').bundleContainer('insertPages', data);
   }
 });
+
+$('nav.navbar > .bundle-details').bundleContainer();

@@ -40,7 +40,7 @@
         $('#selections_modal').modal('hide');
         that._trigger('setSectionSelection', null, {
           fyle_id: that.fyle_id,
-          section_id: $section.val(),
+          section_id: parseInt($section.val()),
           section_name: $section.next('.section-name').text(),
           pages: that.pages
         });
