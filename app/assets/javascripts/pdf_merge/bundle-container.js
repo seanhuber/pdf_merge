@@ -15,6 +15,22 @@
 
     _create: function(){},
 
+    // returns an array for all pages (all sections), e.g.,
+    // [
+    //   {fyle_id: 123, page_num: 14},
+    //   {fyle_id: 123, page_num: 16},
+    //   {fyle_id: 456, page_num: 3}
+    // ]
+    getPages: function(){
+      var ret_arr = [];
+      $.each(this.options.sections, function(section_id, section){
+        $.each(section.pages, function(page_idx, page){
+          ret_arr.push(page);
+        });
+      });
+      return ret_arr;
+    },
+
     // expected properties of opts:
     //   section_id   - (integer), id of the section to add the pages to
     //   section_name - (string), name of the section to add the pages to

@@ -25,3 +25,25 @@ $('nav.navbar > .bundle-details').sectionSelector({
 });
 
 $('nav.navbar > .bundle-details').bundleContainer();
+
+$('nav.navbar a.build-pdf').click(function(){
+  var pages = $('nav.navbar > .bundle-details').bundleContainer('getPages');
+  $("form.build-pdf input[name='sections']").val(JSON.stringify(pages));
+  $('form.build-pdf').submit();
+  return false;
+});
+
+// TODO: remove
+$('nav.navbar > .bundle-details').bundleContainer('insertPages', {
+  fyle_id: 30, // olympus.pdf
+  section_id: 1,
+  section_name: 'olympus',
+  pages: [2,3]
+});
+// TODO: remove
+$('nav.navbar > .bundle-details').bundleContainer('insertPages', {
+  fyle_id: 31, // weird_shapes.pdf
+  section_id: 2,
+  section_name: 'shapes',
+  pages: [1,19,33]
+});

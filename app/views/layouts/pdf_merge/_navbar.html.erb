@@ -7,4 +7,20 @@
   <p class='navbar-text bundle-details'>
     <span class='section-count'>0</span> section(s) totaling <span class='page-count'>0</span> page(s).
   </p>
+  <ul class='nav navbar-nav'>
+    <li class='dropdown'>
+      <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'>Tools <span class='caret'></span></a>
+      <ul class='dropdown-menu'>
+        <li>
+          <%= link_to "<span class='glyphicon glyphicon-save-file'></span> Build PDF".html_safe, bundled_pdf_pdf_path, class: 'build-pdf' %>
+        </li>
+        <!-- <li role='separator' class='divider'></li>
+        <li><a href='#'>Separated link</a></li> -->
+      </ul>
+    </li>
+  </ul>
 </nav>
+
+<%= form_tag bundled_pdf_pdf_path, class: 'hidden build-pdf', target: '_blank' do %>
+  <%= hidden_field_tag :sections %>
+<% end %>
