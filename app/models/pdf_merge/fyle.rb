@@ -20,6 +20,19 @@ module PdfMerge
       File.basename path
     end
 
+    # TODO: DRY with ImagifyJob and FyleHelper
+    def pdf_path
+      if DocPdf.doc? path
+        File.join PdfMerge.doc_pdf_dir, File.basename(PdfMerge.remote_store), File.dirname(path), File.basename(path, '.*')+'.pdf'
+      else
+        File.join PdfMerge.local_store, File.basename(PdfMerge.remote_store), path
+      end
+    end
+
+    def self.pdf_paths fyle_ids
+      where(id: fyle_ids).map{|fyle| [fyle.id, fyle.pdf_path]}.to_h
+    end
+
     def remote_relative_path
       File.join File.basename(PdfMerge.remote_store), path
     end

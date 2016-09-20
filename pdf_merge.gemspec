@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'doc_2_pdf', '~> 1.1.0'
   s.add_dependency 'pdf_thumbnailer', '~> 1.2.0'
   s.add_dependency 'fastimage'
+  s.add_dependency 'combine_pdf', '~> 0.2'
 
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'awesome_print'
