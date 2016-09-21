@@ -11,6 +11,7 @@ require 'capybara/rails'
 require 'factory_girl_rails'
 require 'database_cleaner'
 require 'ap'
+require 'pry-byebug'
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
