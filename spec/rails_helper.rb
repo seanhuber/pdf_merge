@@ -14,6 +14,7 @@ require 'factory_girl_rails'
 require 'database_cleaner'
 require 'ap'
 require 'pry-byebug'
+require 'pdf-reader'
 
 Capybara.javascript_driver = :poltergeist
 

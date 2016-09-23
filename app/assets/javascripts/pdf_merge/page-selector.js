@@ -40,6 +40,13 @@
       this.backdrop.fadeOut('fast');
     },
 
+    _doubleClickThumb: function($thumb_li) {
+      var page_num = $thumb_li.data('page-num');
+      $thumb_li.toggleClass('selected');
+      $thumb_li.find("input[type='checkbox']").prop('checked', $thumb_li.hasClass('selected'));
+      this._selectionChange();
+    },
+
     _selectionChange: function() {
       this.backdrop.find('.thumbs > .buttons > .add-selections').toggleClass('disabled', this.backdrop.find('.thumbs li.selected').length == 0);
     },
@@ -94,10 +101,11 @@
       });
 
       this.backdrop.find('.thumbs li').dblclick(function() {
-        var page_num = $(this).data('page-num');
-        $(this).toggleClass('selected');
-        $(this).find("input[type='checkbox']").prop('checked', $(this).hasClass('selected'));
-        that._selectionChange();
+        that._doubleClickThumb($(this));
+      });
+
+      this.backdrop.find(".thumbs li input[type='checkbox']").change(function(){
+        that._doubleClickThumb($(this).closest('li'));
       });
     }
   });

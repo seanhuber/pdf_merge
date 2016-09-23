@@ -34,4 +34,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'rack_session_access'
   s.add_development_dependency 'database_cleaner', '~> 1.5', '>= 1.5.2'
   s.add_development_dependency 'pry-byebug'
+  s.add_development_dependency 'pdf-reader'
 end
