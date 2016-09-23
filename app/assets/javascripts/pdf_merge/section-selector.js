@@ -22,7 +22,7 @@
             alert('Please enter a name for the new section.');
             return false;
           }
-          var max_radio_val = Math.max(...$("#selections_modal input[name='section']").map(function(){
+          var max_radio_val = Math.max.apply(null, $("#selections_modal input[name='section']").map(function(){
             return parseInt($(this).val());
           }).get());
 

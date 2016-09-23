@@ -27,10 +27,11 @@ Gem::Specification.new do |s|
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'factory_girl_rails'
-  s.add_development_dependency 'capybara'
-  s.add_development_dependency 'capybara-webkit'
+  s.add_development_dependency 'capybara', '~> 2.7'
+  # s.add_development_dependency 'capybara-webkit', '~> 1.11'
+  s.add_development_dependency 'poltergeist'
   s.add_development_dependency 'selenium-webdriver'
   s.add_development_dependency 'rack_session_access'
-  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'database_cleaner', '~> 1.5', '>= 1.5.2'
   s.add_development_dependency 'pry-byebug'
 end
