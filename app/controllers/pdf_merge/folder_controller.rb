@@ -7,7 +7,10 @@ module PdfMerge
 
       folder = path.present? ? Folder.find_by_path(path) : Folder.root
 
-      render json: {folders: folder.folders.map{|f| File.basename(f.path)}, files: folder.fyles.map{|f| File.basename(f.path)}}
+      ret_h = {folders: folder.folders.map{|f| File.basename(f.path)}}
+      ret_h.merge!({files: folder.fyles.map{|f| File.basename(f.path)}}) unless params[:hide_fyles].present?
+
+      render json: ret_h
     end
   end
 end

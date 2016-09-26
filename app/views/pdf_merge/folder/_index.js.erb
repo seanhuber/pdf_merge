@@ -33,17 +33,26 @@ $('nav.navbar a.build-pdf').click(function(){
   return false;
 });
 
-// // TODO: remove
-// $('nav.navbar > .bundle-details').bundleContainer('insertPages', {
-//   fyle_id: 30, // olympus.pdf
-//   section_id: 1,
-//   section_name: 'olympus',
-//   pages: [2,3]
-// });
-// // TODO: remove
-// $('nav.navbar > .bundle-details').bundleContainer('insertPages', {
-//   fyle_id: 31, // weird_shapes.pdf
-//   section_id: 2,
-//   section_name: 'shapes',
-//   pages: [1,19,33]
-// });
+$('nav.navbar a.save-pdf').savePdf({
+  folder_show_path: '<%= folder_show_path hide_fyles: false %>',
+  form_authenticity_token: '<%= form_authenticity_token %>'
+});
+
+<% if false || true %>
+  // TODO: remove
+  $('nav.navbar > .bundle-details').bundleContainer('insertPages', {
+    fyle_id: <%= PdfMerge::Fyle.find_by_path('olympus.pdf').id %>, // olympus.pdf
+    section_id: 1,
+    section_name: 'olympus',
+    pages: [2,3]
+  });
+  // TODO: remove
+  $('nav.navbar > .bundle-details').bundleContainer('insertPages', {
+    fyle_id: <%= PdfMerge::Fyle.find_by_path('weird_shapes.pdf').id %>, // weird_shapes.pdf
+    section_id: 2,
+    section_name: 'shapes',
+    pages: [1,19,33]
+  });
+  // TODO: remove
+  $('nav.navbar > form.navbar-form input#pdf_name').val('test_bundle.pdf');
+<% end %>

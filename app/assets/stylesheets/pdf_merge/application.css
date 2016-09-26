@@ -28,6 +28,15 @@ html.pdf-merge-page > body {
   margin: 0;
 }
 
+.modal-content.alert-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+}
+
+.modal-content.alert .modal-body {
+  padding: 0px;
+}
+
 .left-pane {
   width: 33%;
   float: left;

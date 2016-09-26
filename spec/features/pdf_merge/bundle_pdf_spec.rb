@@ -25,7 +25,6 @@ feature 'Build pdf' do
       click_on 'Add Selected Page(s)'
     end
 
-    # binding.pry
     expect(page).to have_content('Which section do you want to add the 1 selected page(s) to?')
 
     within '#selections_modal form' do

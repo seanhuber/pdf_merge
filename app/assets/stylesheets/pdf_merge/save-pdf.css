@@ -1,0 +1,18 @@
+#save_pdf_modal .save-instructions > .filename {
+  font-weight: bold;
+}
+
+#save_pdf_modal li.selected-folder > .basename {
+  color: white;
+  background-color: #1a8dc7;
+}
+
+#save_pdf_modal li.no-contents {
+  display: none;
+}
+
+#save_pdf_modal .destination > .dest-path {
+  font-family: monospace;
+  color: green;
+  font-weight: bold;
+}

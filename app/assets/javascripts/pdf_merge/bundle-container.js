@@ -31,6 +31,10 @@
       return ret_arr;
     },
 
+    getPagesWithSections: function(){
+      return this.options.sections;
+    },
+
     // expected properties of opts:
     //   section_id   - (integer), id of the section to add the pages to
     //   section_name - (string), name of the section to add the pages to

@@ -1,8 +1,10 @@
 <nav class='navbar navbar-default navbar-fixed-top'>
   <form class='navbar-form navbar-left'>
     <div class='form-group'>
-      <input type='text' class='form-control' placeholder='new_file.pdf'>
+      <input type='text' class='form-control' id='pdf_name' name='pdf_name' placeholder='new_file.pdf' required="true" oninvalid="this.setCustomValidity('Enter a filename before attempting to save');"
+    oninput="setCustomValidity('');" />
     </div>
+    <input type='submit' class='hidden' />
   </form>
   <p class='navbar-text bundle-details'>
     <span class='section-count'>0</span> section(s) totaling <span class='page-count'>0</span> page(s).
@@ -14,8 +16,10 @@
         <li>
           <%= link_to "<span class='glyphicon glyphicon-save-file'></span> Build PDF".html_safe, bundled_pdf_pdf_path, class: 'build-pdf' %>
         </li>
-        <!-- <li role='separator' class='divider'></li>
-        <li><a href='#'>Separated link</a></li> -->
+        <li role='separator' class='divider'></li>
+        <li>
+          <%= link_to "<span class='glyphicon glyphicon-floppy-disk'></span> Save".html_safe, bundled_pdf_save_path, class: 'save-pdf' %>
+        </li>
       </ul>
     </li>
   </ul>
